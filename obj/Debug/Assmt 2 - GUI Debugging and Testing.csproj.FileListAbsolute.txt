@@ -1,0 +1,17 @@
+D:\source\repos\Assmt 2 - GUI Debugging and Testing\obj\Debug\Assmt_2___GUI_Debugging_and_Testing.Properties.Resources.resources
+D:\source\repos\Assmt 2 - GUI Debugging and Testing\obj\Debug\Assmt 2 - GUI Debugging and Testing.csproj.GenerateResource.cache
+D:\source\repos\Assmt 2 - GUI Debugging and Testing\obj\Debug\Assmt 2 - GUI Debugging and Testing.csproj.CoreCompileInputs.cache
+D:\source\repos\Assmt 2 - GUI Debugging and Testing\bin\Debug\Assmt 2 - GUI Debugging and Testing.exe.config
+D:\source\repos\Assmt 2 - GUI Debugging and Testing\bin\Debug\Assmt 2 - GUI Debugging and Testing.exe
+D:\source\repos\Assmt 2 - GUI Debugging and Testing\bin\Debug\Assmt 2 - GUI Debugging and Testing.pdb
+D:\source\repos\Assmt 2 - GUI Debugging and Testing\obj\Debug\Assmt 2 - GUI Debugging and Testing.exe
+D:\source\repos\Assmt 2 - GUI Debugging and Testing\obj\Debug\Assmt 2 - GUI Debugging and Testing.pdb
+D:\source\repos\Assmt 2 - GUI Debugging and Testing\obj\Debug\Assmt_2___GUI_Debugging_and_Testing.branding.resources
+D:\source\repos\Assmt 2 - GUI Debugging and Testing\obj\Debug\Assmt 2 - GUI Debugging and Testing.csprojAssemblyReference.cache
+D:\source\repos\Assmt 2 - GUI Debugging and Testing\obj\Debug\Assmt_2___GUI_Debugging_and_Testing.View_Forms.createCust.resources
+D:\source\repos\Assmt 2 - GUI Debugging and Testing\obj\Debug\Assmt_2___GUI_Debugging_and_Testing.Form1.resources
+D:\source\repos\Assmt 2 - GUI Debugging and Testing\obj\Debug\Assmt_2___GUI_Debugging_and_Testing.home.resources
+D:\source\repos\Assmt 2 - GUI Debugging and Testing\obj\Debug\Assmt_2___GUI_Debugging_and_Testing.View_Forms.editCust.resources
+D:\source\repos\Assmt 2 - GUI Debugging and Testing\obj\Debug\Assmt_2___GUI_Debugging_and_Testing.View_Forms.deleteCust.resources
+D:\source\repos\Assmt 2 - GUI Debugging and Testing\obj\Debug\Assmt_2___GUI_Debugging_and_Testing.View_Forms.viewCustomer.resources
+D:\source\repos\Assmt 2 - GUI Debugging and Testing\obj\Debug\Assmt_2___GUI_Debugging_and_Testing.View_Forms.transForm.resources
