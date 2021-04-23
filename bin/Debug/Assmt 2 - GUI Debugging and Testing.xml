@@ -1,0 +1,743 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Assmt 2 - GUI Debugging and Testing</name>
+    </assembly>
+    <members>
+        <member name="T:Assmt_2___GUI_Debugging_and_Testing.Controller.Controller">
+            <summary>
+            The main controller for the application
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Controller.Controller.addCust">
+            <summary>
+            Opens a new customer form for user input
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Controller.Controller.submitCust(Assmt_2___GUI_Debugging_and_Testing.Customer)">
+            <summary>
+            Is called when the create customer form is submitted and stores the
+            data into the array list
+            </summary>
+            <param name="cust"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Controller.Controller.findCustomer(System.String,System.Windows.Forms.ListBox,Assmt_2___GUI_Debugging_and_Testing.Form1)">
+            <summary>
+            Find customer takes a user input and filters the shown customers based on matched 
+            first or last name
+            </summary>
+            <param name="userInput"></param>
+            <param name="custList"></param>
+            <param name="formReference"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Controller.Controller.viewCustomer(Assmt_2___GUI_Debugging_and_Testing.Customer)">
+            <summary>
+            The View Customer method opens the form with the selected customers information
+            </summary>
+            <param name="cust"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Controller.Controller.openAccountForm(Assmt_2___GUI_Debugging_and_Testing.Customer)">
+            <summary>
+             Opens the Create Account Form
+            </summary>
+            <param name="cust"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Controller.Controller.editCust(Assmt_2___GUI_Debugging_and_Testing.Customer)">
+            <summary>
+            Opens the edit customer form
+            </summary>
+            <param name="cust"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Controller.Controller.submitEdit(Assmt_2___GUI_Debugging_and_Testing.Customer,Assmt_2___GUI_Debugging_and_Testing.Customer)">
+            <summary>
+            Saves the customer changes made in the edit customer form when submitted
+            </summary>
+            <param name="original"></param>
+            <param name="editCust"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Controller.Controller.deleteCustomer(Assmt_2___GUI_Debugging_and_Testing.Customer)">
+            <summary>
+            Opens the delete customer form
+            </summary>
+            <param name="cust"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Controller.Controller.submitDelete(Assmt_2___GUI_Debugging_and_Testing.Customer)">
+            <summary>
+            Deletes the selected customer once it has been confirmed by the user
+            </summary>
+            <param name="cust"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Controller.Controller.accountTransfer(Assmt_2___GUI_Debugging_and_Testing.Customer,Assmt_2___GUI_Debugging_and_Testing.View_Forms.viewCustomer)">
+            <summary>
+            Opens the Account Transfer Form
+            </summary>
+            <param name="cust"></param>
+            <param name="viewCustForm"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Controller.Controller.serialize_and_close">
+            <summary>
+            Stores the customer list and id count to a serialized binary file
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Controller.Controller.deserialize_and_load">
+            <summary>
+            Retrieves Customer List and ID count from Serialized Binary Files
+            </summary>
+        </member>
+        <member name="T:Assmt_2___GUI_Debugging_and_Testing.Controller.DataSerializer">
+            <summary>
+            Data Serializer class with methods to store and retrieve data from serialized files.
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Controller.DataSerializer.BinarySerialize(System.Object,System.String)">
+            <summary>
+            Checks to see if file exists, if true it deletes and replaces the file, if false creates the file.
+            </summary>
+            <param name="data"></param>
+            <param name="filePath"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Controller.DataSerializer.BinaryDeserialize(System.String)">
+            <summary>
+            Retrieves data from serialized binary file and returns it as an object
+            </summary>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Assmt_2___GUI_Debugging_and_Testing.Models.Account">
+            <summary>
+            Everyday Account class labelled simply Account
+            Contains all main functions of a bank account including: Deposit, Withdraw
+            </summary>
+        </member>
+        <member name="F:Assmt_2___GUI_Debugging_and_Testing.Models.Account.idCounter">
+            <summary>
+            Variable declaration
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Models.Account.#ctor">
+            <summary>
+            default account constructor that initializes necessary variables
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Models.Account.#ctor(Assmt_2___GUI_Debugging_and_Testing.Customer)">
+            <summary>
+            Account constructor that takes reference to the Customer object it belongs to
+            </summary>
+            <param name="Owner"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Models.Account.#ctor(Assmt_2___GUI_Debugging_and_Testing.Customer,System.Single)">
+            <summary>
+            Account constructor that takes reference to the Customer object it belongs to and a starting balance
+            </summary>
+            <param name="Owner"></param>
+            <param name="balance"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Models.Account.deposit(System.Single)">
+            <summary>
+            The deposit function takes the depAmount args and adds it to the balance. This is relayed to the user through a message box
+            </summary>
+            <param name="depAmount"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Models.Account.withdraw(System.Single)">
+            <summary>
+            The withdraw function takes the withdrawAmount args and deducts it from the balance. This is relayed to the user through a message box
+            </summary>
+            <param name="withdrawAmount"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Models.Account.calcInterest">
+            <summary>
+            Everyday accounts accrue no interest. This is displayed to the user when called
+            </summary>
+        </member>
+        <member name="T:Assmt_2___GUI_Debugging_and_Testing.Models.failedWithdrawalException">
+            <summary>
+            incomplete exception class that is thrown if a withdrawal fails
+            </summary>
+        </member>
+        <member name="T:Assmt_2___GUI_Debugging_and_Testing.Models.Investment">
+            <summary>
+            Investment class that inherits from Account
+            </summary>
+        </member>
+        <member name="F:Assmt_2___GUI_Debugging_and_Testing.Models.Investment.interestRate">
+            <summary>
+            Flat interest rate as per assignment requirements
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Models.Investment.#ctor">
+            <summary>
+            Default Investment Account constructor
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Models.Investment.#ctor(System.Single)">
+            <summary>
+            Investment account constructor that takes a starting balance
+            </summary>
+            <param name="balance"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Models.Investment.calcInterest">
+            <summary>
+            Method to calculate and add the interest to the balance
+            </summary>
+            <example>
+            float balance = 100f;
+            float interest = 0.04f
+            calcInterest();
+            The resulting balance would then be 104f
+            </example>
+        </member>
+        <member name="T:Assmt_2___GUI_Debugging_and_Testing.Models.Omni">
+            <summary>
+            Omni account class that inherits from the Investment class
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Models.Omni.#ctor(System.Single)">
+            <summary>
+            Omni Constructor that takes a starting balance
+            </summary>
+            <param name="balance"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Models.Omni.#ctor(System.Single,System.Single)">
+            <summary>
+            Omni Constructor that takes a starting balance and overdraft limit
+            Overdraft is redundant for this assignment
+            </summary>
+            <param name="balance"></param>
+            <param name="overdraft"></param>
+        </member>
+        <member name="T:Assmt_2___GUI_Debugging_and_Testing.Customer">
+            <summary>
+            Customer class. Holds customer information, whether they are staff or not and a list of any accounts they have
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Customer.#ctor">
+            <summary>
+            Default constructor filling all variables with dummy data
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Customer.#ctor(System.String,System.String,System.Int32,System.String,System.Boolean)">
+            <summary>
+            Customer constructor that takes user input for all fields excluding the customer ID
+            </summary>
+            <param name="FirstName"></param>
+            <param name="LastName"></param>
+            <param name="PhoneNumber"></param>
+            <param name="EmailAddress"></param>
+            <param name="staff"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Customer.#ctor(System.Int32,System.String,System.String,System.Int32,System.String,System.Boolean)">
+            <summary>
+            Customer constructor that takes user input for all fields excluding customer ID, customer ID
+            is passed into it from other functions. The user cannot change their ID in any way
+            </summary>
+            <param name="ID"></param>
+            <param name="FirstName"></param>
+            <param name="LastName"></param>
+            <param name="PhoneNumber"></param>
+            <param name="EmailAddress"></param>
+            <param name="staff"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Customer.createEveryday">
+            <summary>
+            Adds an everyday (Account) into the account array list with no balance
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Customer.createEveryday(System.Single)">
+            <summary>
+            Adds an everyday (Account) into the account array list with a starting balance
+            </summary>
+            <param name="balance"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Customer.createInvestment">
+            <summary>
+            Adds an Investment account into the account array list with no balance
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Customer.createInvestment(System.Single)">
+            <summary>
+            Adds an Investment account into the account array list with a starting balance
+            </summary>
+            <param name="balance"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Customer.createOmni">
+            <summary>
+            Adds an omni account into the account array list with no balance
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Customer.createOmni(System.Single)">
+            <summary>
+            Adds an omni account into the account array list with a starting balance
+            </summary>
+            <param name="balance"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Customer.createOmni(System.Single,System.Single)">
+            <summary>
+            Adds an omni account into the account array list with a starting balance and available overdraft
+            Overdraft is redundant for this assignment
+            </summary>
+            <param name="balance"></param>
+            <param name="overdraft"></param>
+        </member>
+        <member name="F:Assmt_2___GUI_Debugging_and_Testing.branding.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.branding.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.branding.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Assmt_2___GUI_Debugging_and_Testing.View_Forms.deleteCust">
+            <summary>
+            delete customer form
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.deleteCust.#ctor(Assmt_2___GUI_Debugging_and_Testing.Customer)">
+            <summary>
+            constructor with reference to the target customer
+            </summary>
+            <param name="cust"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.deleteCust.cancelBtn_Click(System.Object,System.EventArgs)">
+            <summary>
+            closes the current form
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.deleteCust.deleteBtn_Click(System.Object,System.EventArgs)">
+            <summary>
+            calls the controller to delete the selected customer from the customer list
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Assmt_2___GUI_Debugging_and_Testing.View_Forms.deleteCust.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.deleteCust.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.deleteCust.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Assmt_2___GUI_Debugging_and_Testing.View_Forms.createCust">
+            <summary>
+            create customer form
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.createCust.#ctor(System.Collections.ArrayList)">
+            <summary>
+            constructor with reference to the list of customers
+            </summary>
+            <param name="custList"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.createCust.cancelCust_Click(System.Object,System.EventArgs)">
+            <summary>
+            closes the current form
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.createCust.submitCust_Click(System.Object,System.EventArgs)">
+            <summary>
+            calls the controller to add the new customer to the customer list
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Assmt_2___GUI_Debugging_and_Testing.View_Forms.createCust.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.createCust.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.createCust.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Assmt_2___GUI_Debugging_and_Testing.View_Forms.editCust">
+            <summary>
+            edit customer form
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.editCust.#ctor(Assmt_2___GUI_Debugging_and_Testing.Customer)">
+            <summary>
+            constructor with reference to the selected customer for edit
+            </summary>
+            <param name="cust"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.editCust.submitCust_Click(System.Object,System.EventArgs)">
+            <summary>
+            calls the controller with the new customer object to replace the previous
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.editCust.cancelCust_Click(System.Object,System.EventArgs)">
+            <summary>
+            closes the current form
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Assmt_2___GUI_Debugging_and_Testing.View_Forms.editCust.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.editCust.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.editCust.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Assmt_2___GUI_Debugging_and_Testing.View_Forms.openAccount">
+            <summary>
+            Open Account class form that creates forms for the selected customer.
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.openAccount.#ctor(Assmt_2___GUI_Debugging_and_Testing.Customer)">
+            <summary>
+            Form constructor that takes the customer from the previous form
+            </summary>
+            <param name="cust"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.openAccount.createAccountBtn_Click(System.Object,System.EventArgs)">
+            <summary>
+            Creates the relevant account type based on the user input through a combo box
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.openAccount.closeBtn_Click(System.Object,System.EventArgs)">
+            <summary>
+            Closes the current form
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.openAccount.openAccount_FormClosing(System.Object,System.Windows.Forms.FormClosingEventArgs)">
+            <summary>
+            updates the customers account list in the previous form to show changes instantly
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Assmt_2___GUI_Debugging_and_Testing.View_Forms.openAccount.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.openAccount.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.openAccount.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Assmt_2___GUI_Debugging_and_Testing.View_Forms.transForm">
+            <summary>
+            transfer form class
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.transForm.#ctor(Assmt_2___GUI_Debugging_and_Testing.Customer)">
+            <summary>
+            constructor with reference to the selected customer making the transfers
+            </summary>
+            <param name="cust"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.transForm.closeBtn_Click(System.Object,System.EventArgs)">
+            <summary>
+            closes the current form
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.transForm.updateAccounts">
+            <summary>
+            updates the account list to show any changes made
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.transForm.transferBtn_Click(System.Object,System.EventArgs)">
+            <summary>
+            transfers the input amount between accounts. if the same account is selected the user is prompted to select seperate accounts
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.transForm.calcIntBtn_Click(System.Object,System.EventArgs)">
+            <summary>
+            iterates through a loop calculating interest on all accounts of the customer
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Assmt_2___GUI_Debugging_and_Testing.View_Forms.transForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.transForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.transForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Assmt_2___GUI_Debugging_and_Testing.View_Forms.viewCustomer">
+            <summary>
+            view customer form
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.viewCustomer.#ctor">
+            <summary>
+            default viewCustomer constructor
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.viewCustomer.#ctor(Assmt_2___GUI_Debugging_and_Testing.Customer)">
+            <summary>
+            Constructor with reference to selected customer
+            </summary>
+            <param name="cust"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.viewCustomer.updateAccounts">
+            <summary>
+            updates the accounts list whenever a change is made to it
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.viewCustomer.closeBtn_Click(System.Object,System.EventArgs)">
+            <summary>
+            closes the current form
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.viewCustomer.transferBtn_Click(System.Object,System.EventArgs)">
+            <summary>
+            calls the controller to open the transfer form
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.viewCustomer.newAccountBtn_Click(System.Object,System.EventArgs)">
+            <summary>
+            calls the controller to open the new account form
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.viewCustomer.depositBtn_Click(System.Object,System.EventArgs)">
+            <summary>
+            calls the controller to add the text input float to the account balance
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.viewCustomer.withdrawBtn_Click(System.Object,System.EventArgs)">
+            <summary>
+            calls the controller to deduct the text input float from the account balance
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Assmt_2___GUI_Debugging_and_Testing.View_Forms.viewCustomer.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.viewCustomer.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.View_Forms.viewCustomer.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Form1.#ctor">
+            <summary>
+            Form1 (Was renamed to manageCustomers but references caused errors) is the main form for all application functionality
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Form1.editCust_Click(System.Object,System.EventArgs)">
+            <summary>
+            editCust_Click checks if a Customer has been selected from the list box. If a customer has been selected it calls the
+            controller to open the editCust form otherwise it informs the user no Customer was selected
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Form1.submitCustForm(Assmt_2___GUI_Debugging_and_Testing.Customer)">
+            <summary>
+            submitCustForm recieves the Customer object from the controller and adds its details to the list box
+            </summary>
+            <param name="cust"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Form1.updateList">
+            <summary>
+            updateList clears and reloads the list box with the up to date customer information. This is called whenever
+            there are changes made to a customer
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Form1.dltCust_Click(System.Object,System.EventArgs)">
+            <summary>
+            dltCust_Click checks if a customer has been selected from the list box. If a customer has been selected it sends that customer
+            object to the controller to open the delete customer form otherwise it informs the user no customer has been selected
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Form1.searchCust_Click(System.Object,System.EventArgs)">
+            <summary>
+            searchCustClick takes a string from the search bar and calls the controller to filter the customer list
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Form1.exit_Click(System.Object,System.EventArgs)">
+            <summary>
+            Exit saves the customer list and id count into a serialized binary file and closes the application
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Form1.Form1_FormClosing(System.Object,System.Windows.Forms.FormClosingEventArgs)">
+            <summary>
+            Alternate save method if the user closes the form without pressing the exit button
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Form1.viewCust_Click(System.Object,System.EventArgs)">
+            <summary>
+            viewCust opens the form related to the selected customer. If no customer is selected it prompts the user to select a customer
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Form1.addCust_Click(System.Object,System.EventArgs)">
+            <summary>
+            Calls the controller to open the add customer form
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Form1.Form1_Shown(System.Object,System.EventArgs)">
+            <summary>
+            This event is a cheap work around due to the form1 reference being null all of a sudden
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Assmt_2___GUI_Debugging_and_Testing.Form1.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Form1.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Form1.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.home.#ctor">
+            <summary>
+            Initial form for the application. Serves no real purpose other than fulfilling assignment requirements
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.home.mngCustBtn_Click(System.Object,System.EventArgs)">
+            <summary>
+            Opens the manageCustomer form
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Assmt_2___GUI_Debugging_and_Testing.home.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.home.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.home.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Assmt_2___GUI_Debugging_and_Testing.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:Assmt_2___GUI_Debugging_and_Testing.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Assmt_2___GUI_Debugging_and_Testing.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Assmt_2___GUI_Debugging_and_Testing.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>

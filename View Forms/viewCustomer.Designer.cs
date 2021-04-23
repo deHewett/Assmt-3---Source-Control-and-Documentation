@@ -40,6 +40,11 @@
             this.accountsLabel = new System.Windows.Forms.Label();
             this.accountsCombo = new System.Windows.Forms.ComboBox();
             this.transferBtn = new System.Windows.Forms.Button();
+            this.newAccountBtn = new System.Windows.Forms.Button();
+            this.amountInput = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.depositBtn = new System.Windows.Forms.Button();
+            this.withdrawBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // fNameLabel
@@ -124,9 +129,9 @@
             // 
             // closeBtn
             // 
-            this.closeBtn.Location = new System.Drawing.Point(254, 314);
+            this.closeBtn.Location = new System.Drawing.Point(249, 411);
             this.closeBtn.Name = "closeBtn";
-            this.closeBtn.Size = new System.Drawing.Size(233, 23);
+            this.closeBtn.Size = new System.Drawing.Size(230, 27);
             this.closeBtn.TabIndex = 15;
             this.closeBtn.Text = "Close";
             this.closeBtn.UseVisualStyleBackColor = true;
@@ -152,18 +157,70 @@
             // 
             // transferBtn
             // 
-            this.transferBtn.Location = new System.Drawing.Point(19, 314);
+            this.transferBtn.Location = new System.Drawing.Point(20, 412);
             this.transferBtn.Name = "transferBtn";
-            this.transferBtn.Size = new System.Drawing.Size(214, 22);
+            this.transferBtn.Size = new System.Drawing.Size(211, 26);
             this.transferBtn.TabIndex = 18;
             this.transferBtn.Text = "Transfer";
             this.transferBtn.UseVisualStyleBackColor = true;
             this.transferBtn.Click += new System.EventHandler(this.transferBtn_Click);
             // 
+            // newAccountBtn
+            // 
+            this.newAccountBtn.Location = new System.Drawing.Point(21, 383);
+            this.newAccountBtn.Name = "newAccountBtn";
+            this.newAccountBtn.Size = new System.Drawing.Size(210, 23);
+            this.newAccountBtn.TabIndex = 19;
+            this.newAccountBtn.Text = "Open New Account";
+            this.newAccountBtn.UseVisualStyleBackColor = true;
+            this.newAccountBtn.Click += new System.EventHandler(this.newAccountBtn_Click);
+            // 
+            // amountInput
+            // 
+            this.amountInput.Location = new System.Drawing.Point(140, 308);
+            this.amountInput.Name = "amountInput";
+            this.amountInput.Size = new System.Drawing.Size(316, 20);
+            this.amountInput.TabIndex = 20;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label1.Location = new System.Drawing.Point(20, 308);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 20);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Amount:";
+            // 
+            // depositBtn
+            // 
+            this.depositBtn.Location = new System.Drawing.Point(140, 334);
+            this.depositBtn.Name = "depositBtn";
+            this.depositBtn.Size = new System.Drawing.Size(141, 23);
+            this.depositBtn.TabIndex = 22;
+            this.depositBtn.Text = "Deposit";
+            this.depositBtn.UseVisualStyleBackColor = true;
+            this.depositBtn.Click += new System.EventHandler(this.depositBtn_Click);
+            // 
+            // withdrawBtn
+            // 
+            this.withdrawBtn.Location = new System.Drawing.Point(287, 334);
+            this.withdrawBtn.Name = "withdrawBtn";
+            this.withdrawBtn.Size = new System.Drawing.Size(169, 23);
+            this.withdrawBtn.TabIndex = 23;
+            this.withdrawBtn.Text = "Withdraw";
+            this.withdrawBtn.UseVisualStyleBackColor = true;
+            this.withdrawBtn.Click += new System.EventHandler(this.withdrawBtn_Click);
+            // 
             // viewCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(524, 362);
+            this.ClientSize = new System.Drawing.Size(502, 450);
+            this.Controls.Add(this.withdrawBtn);
+            this.Controls.Add(this.depositBtn);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.amountInput);
+            this.Controls.Add(this.newAccountBtn);
             this.Controls.Add(this.transferBtn);
             this.Controls.Add(this.accountsCombo);
             this.Controls.Add(this.accountsLabel);
@@ -189,6 +246,11 @@
             this.Controls.SetChildIndex(this.accountsLabel, 0);
             this.Controls.SetChildIndex(this.accountsCombo, 0);
             this.Controls.SetChildIndex(this.transferBtn, 0);
+            this.Controls.SetChildIndex(this.newAccountBtn, 0);
+            this.Controls.SetChildIndex(this.amountInput, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.depositBtn, 0);
+            this.Controls.SetChildIndex(this.withdrawBtn, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,5 +270,10 @@
         private System.Windows.Forms.Label accountsLabel;
         private System.Windows.Forms.ComboBox accountsCombo;
         private System.Windows.Forms.Button transferBtn;
+        private System.Windows.Forms.Button newAccountBtn;
+        private System.Windows.Forms.TextBox amountInput;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button depositBtn;
+        private System.Windows.Forms.Button withdrawBtn;
     }
 }

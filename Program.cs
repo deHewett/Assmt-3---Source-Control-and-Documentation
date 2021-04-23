@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Assmt_2___GUI_Debugging_and_Testing
@@ -16,7 +13,7 @@ namespace Assmt_2___GUI_Debugging_and_Testing
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new home());
         }
     }
 }

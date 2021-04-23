@@ -1,52 +1,52 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Assmt_2___GUI_Debugging_and_Testing.Models
 {
+    /// <summary>
+    /// Omni account class that inherits from the Investment class
+    /// </summary>
+    [Serializable]
     public class Omni : Investment
     {
-        public Omni()
-        {
 
-        }
-        public Omni(Customer Owner)
+        public Omni(Customer owner)
         {
-            this.Owner = Owner;
-            withdrawFailFee = 10.0f;
+            this.Owner = owner;
+        }
+        /// <summary>
+        /// Omni Constructor that takes a starting balance
+        /// </summary>
+        /// <param name="balance"></param>
+        public Omni(float balance)
+        {
+            this.balance = balance;
             overdraft = 1000.0f;
         }
-        public Omni(Customer Owner, float balance)
+
+        public Omni(Customer owner, float balance)
         {
-            this.Owner = Owner;
+            this.Owner = owner;
             this.balance = balance;
-            interestRate = 0.05f;
-            overdraft = 1000.0f;
-            withdrawFailFee = 20.0f;
         }
-        public Omni(Customer Owner, float balance, float overdraft)
+        /// <summary>
+        /// Omni Constructor that takes a starting balance and overdraft limit
+        /// Overdraft is redundant for this assignment
+        /// </summary>
+        /// <param name="balance"></param>
+        /// <param name="overdraft"></param>
+        public Omni(float balance, float overdraft)
         {
-            this.Owner = Owner;
             this.balance = balance;
-            interestRate = 0.05f;
             this.overdraft = overdraft;
-            withdrawFailFee = 20.0f;
+            withdrawFailFee = 10.0f;
         }
-        public string LargeInterest()
+
+        public Omni(Customer owner, float balance, float overdraft)
         {
-            if (balance > 1000.0f)
-            {
-                float interestGain = balance * interestRate;
-                balance += interestGain;
-                LastTransaction = "Interest %" + interestRate + " of $" + interestGain.ToString() + " has been added to the account for a total balance of $" + balance.ToString();
-                return LastTransaction;
-            }
-            else
-            {
-                return "Not enough funds to gather interest";
-            }
+            this.Owner = Owner;
+            this.balance = balance;
+            this.overdraft = overdraft;
+            withdrawFailFee = 10.0f;
         }
     }
 }
